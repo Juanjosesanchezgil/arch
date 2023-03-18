@@ -17,6 +17,8 @@ mkfs.ext4 /dev/$unidad4
 mkfs.fat -F 32 /dev/$unidad1
 mkswap /dev/$unidad2
 
+read -rsp $'Press enter to continue...\n'
+
 echo -------------------------
 echo Montando particiones
 echo -------------------------
