@@ -2,22 +2,29 @@
 # -*- ENCODING: UTF-8 -*-
 
 echo -------------------------
+echo Unidad para isntalar
+echo -------------------------
+
+fdisk -l
+read -p "Introduce la unidad de la instalacion " unidad
+
+echo -------------------------
 echo Sistema de particiones
 echo -------------------------
 
-mkfs.ext4 /dev/nvme0n1p3
-mkfs.ext4 /dev/nvme0n1p4
-mkfs.fat -F 32 /dev/nvme0n1p1
-mkswap /dev/nvme0n1p2
+mkfs.ext4 /dev/$unidad3
+mkfs.ext4 /dev/$unidad4
+mkfs.fat -F 32 /dev/$unidad1
+mkswap /dev/$unidad2
 
 echo -------------------------
 echo Montando particiones
 echo -------------------------
 
-mount /dev/nvme0n1p3 /mnt
-mount --mkdir /dev/nvme0n1p1 /mnt/boot
-mount --mkdir /dev/nvme0n1p4 /mnt/home
-swapon /dev/nvme0n1p2
+mount /dev/$unidad3 /mnt
+mount --mkdir /dev/$unidad1 /mnt/boot
+mount --mkdir /dev/$unidad4 /mnt/home
+swapon /dev/$unidad2
 
 echo -------------------------
 echo Instalando paquetes
