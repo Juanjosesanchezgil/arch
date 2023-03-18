@@ -49,9 +49,17 @@ echo -------------------------
 echo Opciones de usuario
 echo -------------------------
 
+echo -------------------------
+echo Clave usuario root
+echo -------------------------
+
 passwd
 
 useradd -m juanj
+
+echo -------------------------
+echo Clave usuario juanj
+echo -------------------------
 
 passwd juanj
 
@@ -60,6 +68,17 @@ usermod -aG wheel,audio,video,storage
 echo LANG=es_ES.UTF-8 >> /etc/locale.conf
 echo KEYMAP=es >> /etc/vconsole.conf
 echo arch >> /etc/hostname
+echo "127.0.0.1 localhost
+::1 localhost
+127.0.1.1 arch" >> /etc/hosts
+
+echo -------------------------
+echo Activar servicios
+echo -------------------------
+
+systemctl enable NetworkManager.service
+systemctl enable lightdm.service
+
 
 git clone https://aur.archlinux.org/yay.git
 cd yay
@@ -69,4 +88,7 @@ rm -rf yay
 
 yay -S google-chrome
 yay -S visual-studio-code-bin
+
+echo "setxkbmap es" >> /home/juanj/.xprofile
+
 
