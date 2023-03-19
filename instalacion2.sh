@@ -53,7 +53,7 @@ mkdir $usuario
 
 echo "setxkbmap es" >> /home/"$usuario"/.xprofile
 
-read -p "Introduce el nombre de tu host" host
+read -p "Introduce el nombre de tu host " host
 
 echo $host >> /etc/hostname
 echo "127.0.0.1 localhost

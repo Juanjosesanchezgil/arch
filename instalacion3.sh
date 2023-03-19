@@ -1,7 +1,7 @@
 #!/bin/bash
 # -*- ENCODING: UTF-8 -*-
 
-cd /home/$usuario
+cd /home/"$usuario"/
 
 git clone https://aur.archlinux.org/yay.git
 cd yay
