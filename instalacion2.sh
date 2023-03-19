@@ -47,6 +47,8 @@ passwd $usuario
 
 usermod -aG wheel,audio,video,storage $usuario
 
+sed -i 's/#%wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/g /etc/sudoers
+
 echo "setxkbmap es" >> /home/"$usuario"/.xprofile
 
 read -p "Introduce el nombre de tu host" host
@@ -70,6 +72,7 @@ echo -------------------------
 grub-install --target=x86_64-efi --bootloader-id=GRUB --efi-directory=/boot
 grub-mkconfig -o /boot/grub/grub.cfg
 
+su juanj
 
 git clone https://aur.archlinux.org/yay.git
 cd yay

@@ -46,3 +46,7 @@ dos2unix instalacion2.sh
 cp instalacion2.sh /mnt
 
 arch-chroot /mnt ./instalacion2.sh
+
+umount -l /mnt
+
+reboot
