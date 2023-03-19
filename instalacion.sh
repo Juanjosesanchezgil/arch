@@ -56,6 +56,9 @@ arch-chroot /mnt echo es_ES.UTF-8 >> /etc/locale.gen
 
 arch-chroot /mnt locale-gen
 
+arch-chroot /mnt echo LANG=es_ES.UTF-8 >> /etc/locale.conf
+arch-chroot /mnt echo KEYMAP=es >> /etc/vconsole.conf
+
 echo -------------------------
 echo Opciones de usuario
 echo -------------------------
@@ -83,19 +86,19 @@ arch-chroot /mnt passwd $usuario
 
 arch-chroot /mnt usermod -aG wheel,audio,video,storage $usuario
 
-# echo LANG=es_ES.UTF-8 >> /etc/locale.conf
-# echo KEYMAP=es >> /etc/vconsole.conf
-# echo arch >> /etc/hostname
-# echo "127.0.0.1 localhost
-# ::1 localhost
-# 127.0.1.1 arch" >> /etc/hosts
+arch-chroot /mnt echo "setxkbmap es" >> /home/"$usuario"/.xprofile
 
-# echo -------------------------
-# echo Activar servicios
-# echo -------------------------
+arch-chroot /mnt echo arch >> /etc/hostname
+arch-chroot /mnt echo "127.0.0.1 localhost
+::1 localhost
+127.0.1.1 arch" >> /etc/hosts
 
-# systemctl enable NetworkManager.service
-# systemctl enable lightdm.service
+echo -------------------------
+echo Activar servicios
+echo -------------------------
+
+arch-chroot /mnt systemctl enable NetworkManager.service
+arch-chroot /mnt systemctl enable lightdm.service
 
 
 # git clone https://aur.archlinux.org/yay.git
@@ -107,6 +110,5 @@ arch-chroot /mnt usermod -aG wheel,audio,video,storage $usuario
 # yay -S google-chrome
 # yay -S visual-studio-code-bin
 
-# echo "setxkbmap es" >> /home/"$usuario"/.xprofile
 
 
