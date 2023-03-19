@@ -12,10 +12,10 @@ echo -------------------------
 echo Sistema de particiones
 echo -------------------------
 
-mkfs.ext4 /dev/$unidad3
-mkfs.ext4 /dev/$unidad4
-mkfs.fat -F 32 /dev/$unidad1
-mkswap /dev/$unidad2
+mkfs.ext4 /dev/"$unidad"3
+mkfs.ext4 /dev/"$unidad"4
+mkfs.fat -F 32 /dev/"$unidad"1
+mkswap /dev/"$unidad"2
 
 read -rsp $'Press enter to continue...\n'
 
@@ -23,10 +23,10 @@ echo -------------------------
 echo Montando particiones
 echo -------------------------
 
-mount /dev/$unidad3 /mnt
-mount --mkdir /dev/$unidad1 /mnt/boot
-mount --mkdir /dev/$unidad4 /mnt/home
-swapon /dev/$unidad2
+mount /dev/"$unidad"3 /mnt
+mount --mkdir /dev/"$unidad"1 /mnt/boot
+mount --mkdir /dev/"$unidad"4 /mnt/home
+swapon /dev/"$unidad"2
 
 echo -------------------------
 echo Instalando paquetes
@@ -67,15 +67,22 @@ echo -------------------------
 
 passwd
 
-useradd -m juanj
-
 echo -------------------------
-echo Clave usuario juanj
+echo Introduce nombre de usuario
 echo -------------------------
 
-passwd juanj
+read usuario
 
-usermod -aG wheel,audio,video,storage juanj
+
+useradd -m $usuario
+
+echo -------------------------
+echo Clave usuario $usuario
+echo -------------------------
+
+passwd $usuario
+
+usermod -aG wheel,audio,video,storage $usuario
 
 echo LANG=es_ES.UTF-8 >> /etc/locale.conf
 echo KEYMAP=es >> /etc/vconsole.conf
@@ -101,6 +108,6 @@ rm -rf yay
 yay -S google-chrome
 yay -S visual-studio-code-bin
 
-echo "setxkbmap es" >> /home/juanj/.xprofile
+echo "setxkbmap es" >> /home/"$usuario"/.xprofile
 
 
