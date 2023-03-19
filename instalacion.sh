@@ -40,7 +40,7 @@ echo -------------------------
 
 genfstab -U /mnt >> /mnt/etc/fstab
 
-git clone https://github.com/juanjosesanchezgil/arch2.git
+git clone https://github.com/juanjosesanchezgil/arch.git
 
 chmod a+x instalacion2.sh
 dos2unix instalacion2.sh
