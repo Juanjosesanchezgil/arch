@@ -43,7 +43,7 @@ genfstab -U /mnt >> /mnt/etc/fstab
 arch-chroot /mnt pacman -Syu
 
 #pacman -Syu
-# pacman -S xorg i3-wm pulseaudio networkmanager grub efibootmgr alacritty dbeaver git i3status intellij-idea-community-edition lightdm lightdm-gtk-greater network-manager-applet nitrogen nm-connection-editor papirus-icon-theme picom rofi seahorse vlc unzip
+arch-chroot /mnt pacman -S xorg i3-wm pulseaudio networkmanager grub efibootmgr alacritty dbeaver git i3status intellij-idea-community-edition lightdm lightdm-gtk-greater network-manager-applet nitrogen nm-connection-editor papirus-icon-theme picom rofi seahorse vlc unzip
 
 # echo -------------------------
 # echo Opciones de localizacion
