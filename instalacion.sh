@@ -17,8 +17,6 @@ mkfs.ext4 /dev/"$unidad"4
 mkfs.fat -F 32 /dev/"$unidad"1
 mkswap /dev/"$unidad"2
 
-# read -rsp $'Press enter to continue...\n'
-
 echo -------------------------
 echo Montando particiones
 echo -------------------------
@@ -32,7 +30,7 @@ echo -------------------------
 echo Instalando paquetes
 echo -------------------------
 
-pacstrap -K /mnt base base-devel linux linux-firmware nano intel-ucode git dos2unix
+pacstrap -K /mnt base base-devel linux linux-firmware nano intel-ucode
 
 echo -------------------------
 echo Instalando el sistema
