@@ -49,7 +49,7 @@ usermod -aG wheel,audio,video,storage $usuario
 
 sed -i 's/#%wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/g' /etc/sudoers
 
-mkdir $usuario
+#mkdir $usuario
 
 echo "setxkbmap es" >> /home/"$usuario"/.xprofile
 
