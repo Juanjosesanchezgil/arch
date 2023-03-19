@@ -38,12 +38,11 @@ echo -------------------------
 
 genfstab -U /mnt >> /mnt/etc/fstab
 
-git clone https://github.com/juanjosesanchezgil/arch.git
-
-chmod a+x instalacion2.sh
-dos2unix instalacion2.sh
+chmod a+x instalacion*.sh
+dos2unix instalacion*.sh
 
 cp instalacion2.sh /mnt
+cp instalacion3.sh /mnt
 
 arch-chroot /mnt ./instalacion2.sh
 
