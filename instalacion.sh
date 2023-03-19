@@ -32,7 +32,7 @@ echo -------------------------
 echo Instalando paquetes
 echo -------------------------
 
-pacstrap -K /mnt base base-devel linux linux-firmware nano intel-ucode 
+pacstrap -K /mnt base base-devel linux linux-firmware nano intel-ucode xorg i3-wm pulseaudio networkmanager grub efibootmgr alacritty dbeaver git i3status intellij-idea-community-edition lightdm lightdm-gtk-greeter network-manager-applet nitrogen nm-connection-editor papirus-icon-theme picom rofi seahorse vlc unzip --noconfirm
 
 echo -------------------------
 echo Instalando el sistema
@@ -43,19 +43,19 @@ genfstab -U /mnt >> /mnt/etc/fstab
 arch-chroot /mnt pacman -Syu
 
 #pacman -Syu
-arch-chroot /mnt pacman -S xorg i3-wm pulseaudio networkmanager grub efibootmgr alacritty dbeaver git i3status intellij-idea-community-edition lightdm lightdm-gtk-greeter network-manager-applet nitrogen nm-connection-editor papirus-icon-theme picom rofi seahorse vlc unzip
+#arch-chroot /mnt pacman -S xorg i3-wm pulseaudio networkmanager grub efibootmgr alacritty dbeaver git i3status intellij-idea-community-edition lightdm lightdm-gtk-greeter network-manager-applet nitrogen nm-connection-editor papirus-icon-theme picom rofi seahorse vlc unzip --noconfirm
 
-# echo -------------------------
-# echo Opciones de localizacion
-# echo -------------------------
+echo -------------------------
+echo Opciones de localizacion
+echo -------------------------
 
-# ln -sf /usr/share/zoneinfo/Europe/Madrid /etc/localtime
+arch-chroot /mnt ln -sf /usr/share/zoneinfo/Europe/Madrid /etc/localtime
 
-# hwclock --systohc
+arch-chroot /mnt hwclock --systohc
 
-# nano /etc/locale.gen
+arch-chroot /mnt nano /etc/locale.gen
 
-# locale-gen
+arch-chroot /mnt locale-gen
 
 # echo -------------------------
 # echo Opciones de usuario
