@@ -2,7 +2,7 @@
 # -*- ENCODING: UTF-8 -*-
 
 echo -------------------------
-echo Unidad para isntalar
+echo Unidad para instalar
 echo -------------------------
 
 fdisk -l
@@ -32,7 +32,7 @@ echo -------------------------
 echo Instalando paquetes
 echo -------------------------
 
-pacstrap -K /mnt base base-devel linux linux-firmware nano intel-ucode xorg i3-wm pulseaudio networkmanager grub efibootmgr alacritty dbeaver git i3status intellij-idea-community-edition lightdm lightdm-gtk-greeter network-manager-applet nitrogen nm-connection-editor papirus-icon-theme picom rofi seahorse vlc unzip --noconfirm
+pacstrap -K /mnt base base-devel linux linux-firmware nano intel-ucode
 
 echo -------------------------
 echo Instalando el sistema
@@ -42,8 +42,7 @@ genfstab -U /mnt >> /mnt/etc/fstab
 
 arch-chroot /mnt pacman -Syu
 
-#pacman -Syu
-#arch-chroot /mnt pacman -S xorg i3-wm pulseaudio networkmanager grub efibootmgr alacritty dbeaver git i3status intellij-idea-community-edition lightdm lightdm-gtk-greeter network-manager-applet nitrogen nm-connection-editor papirus-icon-theme picom rofi seahorse vlc unzip --noconfirm
+arch-chroot /mnt pacman -S xorg i3-wm pulseaudio networkmanager grub efibootmgr alacritty dbeaver git i3status intellij-idea-community-edition lightdm lightdm-gtk-greeter network-manager-applet nitrogen nm-connection-editor papirus-icon-theme picom rofi seahorse vlc unzip --noconfirm
 
 echo -------------------------
 echo Opciones de localizacion
@@ -53,36 +52,36 @@ arch-chroot /mnt ln -sf /usr/share/zoneinfo/Europe/Madrid /etc/localtime
 
 arch-chroot /mnt hwclock --systohc
 
-arch-chroot /mnt nano /etc/locale.gen
+arch-chroot /mnt echo es_ES.UTF-8 >> /etc/locale.gen
 
 arch-chroot /mnt locale-gen
 
-# echo -------------------------
-# echo Opciones de usuario
-# echo -------------------------
+echo -------------------------
+echo Opciones de usuario
+echo -------------------------
 
-# echo -------------------------
-# echo Clave usuario root
-# echo -------------------------
+echo -------------------------
+echo Clave usuario root
+echo -------------------------
 
-# passwd
+arch-chroot /mnt passwd
 
-# echo -------------------------
-# echo Introduce nombre de usuario
-# echo -------------------------
+echo -------------------------
+echo Introduce nombre de usuario
+echo -------------------------
 
-# read usuario
+read usuario
 
 
-# useradd -m $usuario
+arch-chroot /mnt useradd -m $usuario
 
-# echo -------------------------
-# echo Clave usuario $usuario
-# echo -------------------------
+echo -------------------------
+echo Clave usuario $usuario
+echo -------------------------
 
-# passwd $usuario
+arch-chroot /mnt passwd $usuario
 
-# usermod -aG wheel,audio,video,storage $usuario
+arch-chroot /mnt usermod -aG wheel,audio,video,storage $usuario
 
 # echo LANG=es_ES.UTF-8 >> /etc/locale.conf
 # echo KEYMAP=es >> /etc/vconsole.conf
