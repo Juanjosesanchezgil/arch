@@ -100,6 +100,13 @@ echo -------------------------
 arch-chroot /mnt systemctl enable NetworkManager.service
 arch-chroot /mnt systemctl enable lightdm.service
 
+echo -------------------------
+echo Instalando arranque
+echo -------------------------
+
+arch-chroot /mnt grub-install --target=x86_64-efi --bootloader-id=GRUB --efi-directory=/boot
+arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
+
 
 # git clone https://aur.archlinux.org/yay.git
 # cd yay
