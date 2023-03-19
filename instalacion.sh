@@ -40,74 +40,74 @@ echo -------------------------
 
 genfstab -U /mnt >> /mnt/etc/fstab
 
-arch-chroot /mnt
+arch-chroot /mnt pacman -Syu
 
-pacman -Syu
-pacman -S xorg i3-wm pulseaudio networkmanager grub efibootmgr alacritty dbeaver git i3status intellij-idea-community-edition lightdm lightdm-gtk-greater network-manager-applet nitrogen nm-connection-editor papirus-icon-theme picom rofi seahorse vlc unzip
+#pacman -Syu
+# pacman -S xorg i3-wm pulseaudio networkmanager grub efibootmgr alacritty dbeaver git i3status intellij-idea-community-edition lightdm lightdm-gtk-greater network-manager-applet nitrogen nm-connection-editor papirus-icon-theme picom rofi seahorse vlc unzip
 
-echo -------------------------
-echo Opciones de localizacion
-echo -------------------------
+# echo -------------------------
+# echo Opciones de localizacion
+# echo -------------------------
 
-ln -sf /usr/share/zoneinfo/Europe/Madrid /etc/localtime
+# ln -sf /usr/share/zoneinfo/Europe/Madrid /etc/localtime
 
-hwclock --systohc
+# hwclock --systohc
 
-nano /etc/locale.gen
+# nano /etc/locale.gen
 
-locale-gen
+# locale-gen
 
-echo -------------------------
-echo Opciones de usuario
-echo -------------------------
+# echo -------------------------
+# echo Opciones de usuario
+# echo -------------------------
 
-echo -------------------------
-echo Clave usuario root
-echo -------------------------
+# echo -------------------------
+# echo Clave usuario root
+# echo -------------------------
 
-passwd
+# passwd
 
-echo -------------------------
-echo Introduce nombre de usuario
-echo -------------------------
+# echo -------------------------
+# echo Introduce nombre de usuario
+# echo -------------------------
 
-read usuario
-
-
-useradd -m $usuario
-
-echo -------------------------
-echo Clave usuario $usuario
-echo -------------------------
-
-passwd $usuario
-
-usermod -aG wheel,audio,video,storage $usuario
-
-echo LANG=es_ES.UTF-8 >> /etc/locale.conf
-echo KEYMAP=es >> /etc/vconsole.conf
-echo arch >> /etc/hostname
-echo "127.0.0.1 localhost
-::1 localhost
-127.0.1.1 arch" >> /etc/hosts
-
-echo -------------------------
-echo Activar servicios
-echo -------------------------
-
-systemctl enable NetworkManager.service
-systemctl enable lightdm.service
+# read usuario
 
 
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si --noconfirm
-cd ..
-rm -rf yay
+# useradd -m $usuario
 
-yay -S google-chrome
-yay -S visual-studio-code-bin
+# echo -------------------------
+# echo Clave usuario $usuario
+# echo -------------------------
 
-echo "setxkbmap es" >> /home/"$usuario"/.xprofile
+# passwd $usuario
+
+# usermod -aG wheel,audio,video,storage $usuario
+
+# echo LANG=es_ES.UTF-8 >> /etc/locale.conf
+# echo KEYMAP=es >> /etc/vconsole.conf
+# echo arch >> /etc/hostname
+# echo "127.0.0.1 localhost
+# ::1 localhost
+# 127.0.1.1 arch" >> /etc/hosts
+
+# echo -------------------------
+# echo Activar servicios
+# echo -------------------------
+
+# systemctl enable NetworkManager.service
+# systemctl enable lightdm.service
+
+
+# git clone https://aur.archlinux.org/yay.git
+# cd yay
+# makepkg -si --noconfirm
+# cd ..
+# rm -rf yay
+
+# yay -S google-chrome
+# yay -S visual-studio-code-bin
+
+# echo "setxkbmap es" >> /home/"$usuario"/.xprofile
 
 
