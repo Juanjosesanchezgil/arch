@@ -3,6 +3,8 @@
 
 cd /home/"$usuario"/
 
+su $usuario
+
 read -rsp $'Press enter to continue...\n'
 
 git clone https://aur.archlinux.org/yay.git
