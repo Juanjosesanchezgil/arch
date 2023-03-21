@@ -62,7 +62,7 @@ echo -------------------------
 echo Activar servicios
 echo -------------------------
 
-systemctl enable NetworkManager.service
+#systemctl enable NetworkManager.service
 systemctl enable lightdm.service
 
 echo -------------------------
