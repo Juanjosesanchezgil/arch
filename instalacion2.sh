@@ -13,7 +13,7 @@ ln -sf /usr/share/zoneinfo/Europe/Madrid /etc/localtime
 
 hwclock --systohc
 
-echo es_ES.UTF-8 >> /etc/locale.gen
+sed -i 's/#es_ES.UTF-8 UTF-8/es_ES.UTF-8 UTF-8/g' /etc/locale.gen
 
 locale-gen
 
@@ -62,7 +62,7 @@ echo -------------------------
 echo Activar servicios
 echo -------------------------
 
-#systemctl enable NetworkManager.service
+systemctl enable NetworkManager.service
 systemctl enable lightdm.service
 
 echo -------------------------
