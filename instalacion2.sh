@@ -3,7 +3,7 @@
 
 pacman -Sy
 
-pacman -S xorg i3-wm pulseaudio networkmanager grub efibootmgr alacritty dbeaver git i3status intellij-idea-community-edition lightdm lightdm-gtk-greeter network-manager-applet nitrogen nm-connection-editor papirus-icon-theme picom rofi seahorse vlc unzip ntfs-3g udiskie libreoffice-fresh os-prober unzip arandr --noconfirm
+pacman -S xorg i3-wm pulseaudio networkmanager grub efibootmgr alacritty dbeaver git i3status intellij-idea-community-edition lightdm lightdm-gtk-greeter network-manager-applet nitrogen nm-connection-editor papirus-icon-theme picom rofi seahorse vlc unzip ntfs-3g udiskie libreoffice-fresh os-prober unzip arandr noto-fonts pavucontrol ttf-dejavu volumeicon ttf-liberation --noconfirm
 
 echo -------------------------
 echo Opciones de localizacion
@@ -49,7 +49,10 @@ usermod -aG wheel,audio,video,storage $usuario
 
 sed -i 's/# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/g' /etc/sudoers
 
-echo "setxkbmap es" >> /home/"$usuario"/.xprofile
+echo "setxkbmap es &
+nm-applet &
+udiskie -t &
+volumeicon &" >> /home/"$usuario"/.xprofile
 
 read -p "Introduce el nombre de tu host " host
 
