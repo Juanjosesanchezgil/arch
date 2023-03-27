@@ -47,6 +47,8 @@ cp instalacion3.sh /mnt
 arch-chroot /mnt ./instalacion2.sh
 
 rm -rf /mnt/instalacion*.sh
+cd ..
+rm -rf arch
 
 #umount -l /mnt
 
