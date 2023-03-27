@@ -38,18 +38,17 @@ echo -------------------------
 
 genfstab -U /mnt >> /mnt/etc/fstab
 
-chmod a+x instalacion*.sh
-dos2unix instalacion*.sh
-
 cp instalacion2.sh /mnt
 cp instalacion3.sh /mnt
+cp config /mnt
 
 arch-chroot /mnt ./instalacion2.sh
 
 rm -rf /mnt/instalacion*.sh
+rm -rf /mnt/config
 cd ..
 rm -rf arch
 
-#umount -l /mnt
+umount -l /mnt
 
-#reboot
+reboot
