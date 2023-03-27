@@ -70,7 +70,22 @@ echo -------------------------
 grub-install --target=x86_64-efi --bootloader-id=GRUB --efi-directory=/boot
 grub-mkconfig -o /boot/grub/grub.cfg
 
-./instalacion3.sh
+echo -------------------------
+echo Opciones de configuracion
+echo -------------------------
+
+echo "setxkbmap es &
+nm-applet &
+udiskie -t &
+volumeicon &" >> /home/"$usuario"/.xprofile
+
+git clone https://github.com/jluttine/rofi-power-menu.git ~/.rofi-power-menu
+
+cp config /home/"$usuario"/.config/i3/
+
+read -rsp $'Press enter to continue...\n'
+
+#./instalacion3.sh
 
 
 
