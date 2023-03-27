@@ -1,19 +1,17 @@
 #!/bin/bash
 # -*- ENCODING: UTF-8 -*-
 
+echo -------------------------
+echo Opciones de configuracion
+echo -------------------------
+
+echo "setxkbmap es &
+nm-applet &
+udiskie -t &
+volumeicon &" >> /home/"$usuario"/.xprofile
+
 cd /home/"$usuario"/
 
-#su $usuario
+git clone https://github.com/jluttine/rofi-power-menu.git .rofi-power-menu
 
-read -rsp $'Press enter to continue...\n'
-
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si --noconfirm
-cd ..
-rm -rf yay
-
-read -rsp $'Press enter to continue...\n'
-
-yay -S google-chrome
-yay -S visual-studio-code-bin
+cp config /home/"$usuario"/.config/i3/
