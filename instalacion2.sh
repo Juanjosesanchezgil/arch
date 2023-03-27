@@ -81,6 +81,11 @@ volumeicon &" >> /home/"$usuario"/.xprofile
 
 git clone https://github.com/jluttine/rofi-power-menu.git ~/.rofi-power-menu
 
+cd $HOME
+mkdir .config
+cd .config
+mkdir i3
+
 cp config /home/"$usuario"/.config/i3/
 
 read -rsp $'Press enter to continue...\n'
