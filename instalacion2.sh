@@ -87,6 +87,13 @@ cd /
 
 cp -rf .config /home/"$usuario"/
 
+su juanj
+
+pacman -U yay-11.3.2-1-x86_64.pkg.tar.zst --noconfirm
+
+yay -S google-chrome visual-studio-code-bin --noconfirm
+
+exit
 
 rm -rf instalacion*.sh
 rm -rf .config
@@ -94,7 +101,7 @@ rm -rf .config
 chown -R $usuario /home/juanj/
 chgrp -R $usuario /home/juanj/
 
-#read -rsp $'Press enter to continue...\n'
+read -rsp $'Press enter to continue...\n'
 
 #./instalacion3.sh
 
