@@ -81,7 +81,7 @@ volumeicon &" >> /home/"$usuario"/.xprofile
 
 cd /home/$usuario/
 
-git clone https://github.com/jluttine/rofi-power-menu.git
+git clone https://github.com/jluttine/rofi-power-menu.git .rofi-power-menu
 
 cd /
 
