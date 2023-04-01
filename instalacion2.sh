@@ -3,7 +3,7 @@
 
 pacman -Sy
 
-pacman -S xorg i3-wm pulseaudio networkmanager grub efibootmgr alacritty dbeaver htop ranger pcmanfm neofetch git i3status intellij-idea-community-edition lightdm lightdm-gtk-greeter network-manager-applet nitrogen nm-connection-editor papirus-icon-theme picom rofi seahorse vlc unzip ntfs-3g udiskie libreoffice-fresh os-prober unzip arandr noto-fonts ttf-dejavu volumeicon ttf-liberation postgresql pavucontrol github-cli i3-lock xautolock --noconfirm
+pacman -S xorg i3-wm pulseaudio networkmanager grub efibootmgr alacritty dbeaver htop ranger pcmanfm neofetch git i3status intellij-idea-community-edition lightdm lightdm-gtk-greeter network-manager-applet nitrogen nm-connection-editor papirus-icon-theme picom rofi seahorse vlc unzip ntfs-3g udiskie libreoffice-fresh os-prober unzip arandr noto-fonts ttf-dejavu volumeicon ttf-liberation postgresql pavucontrol github-cli i3lock xautolock --noconfirm
 
 echo -------------------------
 echo Opciones de localizacion
