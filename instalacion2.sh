@@ -79,7 +79,11 @@ nm-applet &
 udiskie -t &
 volumeicon &" >> /home/"$usuario"/.xprofile
 
-git clone https://github.com/jluttine/rofi-power-menu.git ~/.rofi-power-menu
+cd ~
+
+git clone https://github.com/jluttine/rofi-power-menu.git
+
+cd /
 
 cp -rf .config /home/"$usuario"/
 
