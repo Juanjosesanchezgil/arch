@@ -87,16 +87,16 @@ cd /
 
 cp -rf .config /home/"$usuario"/
 
-rm -rf instalacion*.sh
-rm -rf .config
-rm -rf yay-11.3.2-1-x86_64.pkg.tar.zst
-
 chown -R $usuario /home/$usuario/
 chgrp -R $usuario /home/$usuario/
 
 read -rsp $'Press enter to continue...\n'
 
-su juanj ./instalacion3.sh
+su $usuario ./instalacion3.sh
+
+rm -rf instalacion*.sh
+rm -rf .config
+rm -rf yay-11.3.2-1-x86_64.pkg.tar.zst
 
 
 
