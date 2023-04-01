@@ -40,12 +40,12 @@ genfstab -U /mnt >> /mnt/etc/fstab
 
 cp instalacion2.sh /mnt
 cp instalacion3.sh /mnt
-cp config /mnt
+cp -rf .config /mnt
 
 arch-chroot /mnt ./instalacion2.sh
 
 #rm -rf /mnt/instalacion*.sh
-#rm -rf /mnt/config
+#rm -rf /mnt/.config
 #cd ..
 #rm -rf arch
 
