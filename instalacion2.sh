@@ -3,7 +3,7 @@
 
 pacman -Sy
 
-pacman -S xorg i3-wm pulseaudio networkmanager grub efibootmgr alacritty dbeaver htop neofetch git i3status intellij-idea-community-edition lightdm lightdm-gtk-greeter network-manager-applet nitrogen nm-connection-editor papirus-icon-theme picom rofi seahorse vlc unzip ntfs-3g udiskie libreoffice-fresh os-prober unzip arandr noto-fonts pavucontrol ttf-dejavu volumeicon ttf-liberation postgresql pgadmin4 --noconfirm
+pacman -S xorg i3-wm pulseaudio networkmanager grub efibootmgr alacritty dbeaver htop neofetch git i3status intellij-idea-community-edition lightdm lightdm-gtk-greeter network-manager-applet nitrogen nm-connection-editor papirus-icon-theme picom rofi seahorse vlc unzip ntfs-3g udiskie libreoffice-fresh os-prober unzip arandr noto-fonts pavucontrol ttf-dejavu volumeicon ttf-liberation postgresql pavucontrol github-cli --noconfirm
 
 echo -------------------------
 echo Opciones de localizacion
@@ -81,12 +81,7 @@ volumeicon &" >> /home/"$usuario"/.xprofile
 
 git clone https://github.com/jluttine/rofi-power-menu.git ~/.rofi-power-menu
 
-cd $HOME
-mkdir .config
-cd .config
-mkdir i3
-
-cp config /home/"$usuario"/.config/i3/
+cp -rf .config /home/"$usuario"/
 
 read -rsp $'Press enter to continue...\n'
 
