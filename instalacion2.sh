@@ -87,7 +87,11 @@ cd /
 
 cp -rf .config /home/"$usuario"/
 
-read -rsp $'Press enter to continue...\n'
+
+rm -rf /mnt/instalacion*.sh
+rm -rf /mnt/.config
+
+#read -rsp $'Press enter to continue...\n'
 
 #./instalacion3.sh
 
