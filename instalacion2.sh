@@ -98,8 +98,8 @@ exit
 rm -rf instalacion*.sh
 rm -rf .config
 
-chown -R $usuario /home/juanj/
-chgrp -R $usuario /home/juanj/
+chown -R $usuario /home/$usuario/
+chgrp -R $usuario /home/$usuario/
 
 read -rsp $'Press enter to continue...\n'
 
