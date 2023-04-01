@@ -85,6 +85,8 @@ git clone https://github.com/jluttine/rofi-power-menu.git .rofi-power-menu
 
 cd /
 
+pacman -U yay-11.3.2-1-x86_64.pkg.tar.zst --noconfirm
+
 cp -rf .config /home/"$usuario"/
 
 chown -R $usuario /home/$usuario/
