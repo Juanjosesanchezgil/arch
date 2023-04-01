@@ -103,7 +103,7 @@ chgrp -R $usuario /home/juanj/
 
 read -rsp $'Press enter to continue...\n'
 
-#./instalacion3.sh
+su juanj ./instalacion3.sh
 
 
 
