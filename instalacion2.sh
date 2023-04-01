@@ -79,7 +79,7 @@ nm-applet &
 udiskie -t &
 volumeicon &" >> /home/"$usuario"/.xprofile
 
-cd ~
+cd /home/$usuario/
 
 git clone https://github.com/jluttine/rofi-power-menu.git
 
@@ -88,8 +88,8 @@ cd /
 cp -rf .config /home/"$usuario"/
 
 
-rm -rf /mnt/instalacion*.sh
-rm -rf /mnt/.config
+rm -rf instalacion*.sh
+rm -rf .config
 
 #read -rsp $'Press enter to continue...\n'
 
