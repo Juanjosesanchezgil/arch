@@ -7,4 +7,4 @@ echo -------------------------
 
 yay -S google-chrome visual-studio-code-bin --noconfirm
 
-read -rsp $'Press enter to continue...\n'
+#read -rsp $'Press enter to continue...\n'
