@@ -92,7 +92,7 @@ cp -rf .config /home/"$usuario"/
 chown -R $usuario /home/$usuario/
 chgrp -R $usuario /home/$usuario/
 
-read -rsp $'Press enter to continue...\n'
+#read -rsp $'Press enter to continue...\n'
 
 su $usuario ./instalacion3.sh
 
