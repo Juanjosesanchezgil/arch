@@ -2,18 +2,9 @@
 # -*- ENCODING: UTF-8 -*-
 
 echo -------------------------
-echo Opciones de configuracion
+echo YAY y AUR
 echo -------------------------
 
-echo "setxkbmap es &
-nm-applet &
-udiskie -t &
-volumeicon &" >> /home/"$usuario"/.xprofile
-
-cd /home/"$usuario"/
-
-git clone https://github.com/jluttine/rofi-power-menu.git .rofi-power-menu
-
-cp config /home/"$usuario"/.config/i3/
+echo "hola"
 
 read -rsp $'Press enter to continue...\n'
