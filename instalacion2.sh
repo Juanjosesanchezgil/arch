@@ -3,7 +3,7 @@
 
 pacman -Sy
 
-pacman -S xorg i3-wm pulseaudio networkmanager grub efibootmgr alacritty dbeaver htop ranger pcmanfm neofetch git i3status intellij-idea-community-edition lightdm lightdm-gtk-greeter network-manager-applet nitrogen nm-connection-editor papirus-icon-theme picom rofi seahorse vlc unzip ntfs-3g udiskie libreoffice-fresh os-prober unzip arandr noto-fonts ttf-dejavu volumeicon ttf-liberation pavucontrol github-cli i3lock xautolock xarchiver --noconfirm
+pacman -S xorg i3-wm pulseaudio networkmanager grub docker docker-compose efibootmgr alacritty dbeaver htop ranger pcmanfm neofetch git i3status intellij-idea-community-edition lightdm lightdm-gtk-greeter network-manager-applet nitrogen nm-connection-editor papirus-icon-theme picom rofi seahorse vlc unzip ntfs-3g udiskie libreoffice-fresh os-prober unzip arandr noto-fonts ttf-dejavu volumeicon ttf-liberation pavucontrol github-cli i3lock xautolock xarchiver --noconfirm
 
 echo -------------------------
 echo Opciones de localizacion
@@ -45,7 +45,7 @@ echo -------------------------
 
 passwd $usuario
 
-usermod -aG wheel,audio,video,storage $usuario
+usermod -aG wheel,audio,video,storage,docker $usuario
 
 sed -i 's/# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/g' /etc/sudoers
 
@@ -62,6 +62,7 @@ echo -------------------------
 
 systemctl enable NetworkManager.service
 systemctl enable lightdm.service
+systemctl enable docker.service
 
 echo -------------------------
 echo Instalando arranque
