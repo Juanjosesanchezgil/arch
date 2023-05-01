@@ -12,30 +12,47 @@ echo -------------------------
 echo Sistema de particiones
 echo -------------------------
 
-mkfs.ext4 /dev/"$unidad"3
-mkfs.ext4 /dev/"$unidad"4
-mkswap /dev/"$unidad"2
-
-echo -------------------------
-echo Montando particiones
-echo -------------------------
-
-mount /dev/"$unidad"3 /mnt
-mount --mkdir /dev/"$unidad"4 /mnt/home
-swapon /dev/"$unidad"2
-
-echo -------------------------
-echo Opciones particion Boot
-echo -------------------------
-
 read -p "¿Es una instalacion multiboot? S/N" arranque
 
 if [[ $arranque = s ]] || [[ $arranque = si ]] || [[ $arranque = S ]] || [[ $arranque = Si ]] || [[ $arranque = Y ]]
 then
+  mkswap /dev/"$unidad"1
+  mkfs.ext4 /dev/"$unidad"2
+  mkfs.ext4 /dev/"$unidad"3
+  
+  echo -------------------------
+  echo Montando particiones
+  echo -------------------------
+  
+  swapon /dev/"$unidad"1
+  mount /dev/"$unidad"2 /mnt
+  mount --mkdir /dev/"$unidad"3 /mnt/home
+  
+  echo -------------------------
+  echo Opciones particion Boot
+  echo -------------------------
+  
   fdisk -l
   read -p "Escribe el nombre de la particion donde se encuentra el arranque de Windows " particion
   mount --mkdir /dev/"$particion" /mnt/boot
 else
+
+  mkswap /dev/"$unidad"2
+  mkfs.ext4 /dev/"$unidad"3
+  mkfs.ext4 /dev/"$unidad"4
+  
+  echo -------------------------
+  echo Montando particiones
+  echo -------------------------
+  
+  swapon /dev/"$unidad"2
+  mount /dev/"$unidad"3 /mnt
+  mount --mkdir /dev/"$unidad"4 /mnt/home
+  
+  echo -------------------------
+  echo Opciones particion Boot
+  echo -------------------------
+  
   mkfs.fat -F 32 /dev/"$unidad"1
   mount --mkdir /dev/"$unidad"1 /mnt/boot
 fi
