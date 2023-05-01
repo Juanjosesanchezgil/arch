@@ -5,16 +5,30 @@ echo -------------------------
 echo Unidad para instalar
 echo -------------------------
 
-fdisk -l
-read -p "Introduce la unidad de la instalacion sin la particion " unidad
+read -p "¿Vas a instalar en M.2? s/n " ssd
+while [[ ! "$ssd" =~ ^(S|s|N|n)$ ]]
+do
+  read -p "¿Vas a instalar en M.2? s/n " ssd
+done
+
+if [[ $ssd = ^(S|s)$ ]]
+then
+  unidad=nvme
+  fdisk -l | grep nvme
+ else
+  unidad=sd
+  fdisk -l | grep sd
+fi
+
+cfdisk /dev/"$unidad"
 
 echo -------------------------
 echo Sistema de particiones
 echo -------------------------
 
-read -p "¿Es una instalacion multiboot? S/N" arranque
+read -p "¿Es una instalacion multiboot? s/n" arranque
 
-if [[ $arranque = s ]] || [[ $arranque = si ]] || [[ $arranque = S ]] || [[ $arranque = Si ]] || [[ $arranque = Y ]]
+if [[ $arranque =~ ^(S|s|N|n)$ ]]
 then
   mkswap /dev/"$unidad"1
   mkfs.ext4 /dev/"$unidad"2
