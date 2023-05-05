@@ -4,10 +4,14 @@
 echo -------------------------------------
 echo Instalador automatico personalizado
 echo -------------------------------------
+echo
 
 fdisk -l
+echo
 echo "¿En que unidad deseas intalar?: "
-contador = 0
+echo -------------------------------------
+echo
+contador=0
 while [[ true ]]
 do
   ((contador+=1))
@@ -18,7 +22,11 @@ do
   fi
   echo "$contador" "$unidad"
 done
-echo $contador
+echo
+read -p "Introduce el numero: " contador
+echo
+
+unidad=$(fdisk -l | grep /dev/ | awk 'NR=='$contador'{print $0}' | awk {'print $2'} | cut -d '/' -f3 | cut -d ':' -f1)
 
 exit
 
