@@ -13,11 +13,12 @@ done
 
 if [[ $ssd =~ ^(S|s)$ ]]
 then
+  fdisk -l | grep Disco |grep nvme
+  
   unidad=nvme
-  fdisk -l | grep nvme
  else
+  fdisk -l | grep Disco | grep sd
   unidad=sd
-  fdisk -l | grep sd
 fi
 
 cfdisk /dev/"$unidad"
