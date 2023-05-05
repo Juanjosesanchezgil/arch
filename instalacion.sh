@@ -14,12 +14,15 @@ contador=0
 while [[ true ]]
 do
   ((contador+=1))
-  unidad=$(fdisk -l | grep "Dis /dev/" | awk 'NR=='$contador'{print $0}' | awk {'print $2'} | cut -d '/' -f3 | cut -d ':' -f1)
+  unidad=$(fdisk -l | grep "Disk /dev/" | awk 'NR=='$contador'{print $0}' | awk {'print $2'} | cut -d '/' -f3 | cut -d ':' -f1)
   if [[ -z "$unidad" ]]
   then
       break
   fi
-  echo "$contador" "$unidad"
+  if [[ $unidad == sd* ]] || [[ $unidad == nvme* ]]
+  then
+    echo "$contador" "$unidad"
+  fi
 done
 echo 
 read -p "Introduce el numero: " contador
