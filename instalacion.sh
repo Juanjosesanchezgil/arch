@@ -6,7 +6,14 @@ echo Instalador automatico personalizado
 echo -------------------------------------
 
 fdisk -l
-unidad=$(fdisk -l | grep Disco | awk {'print $2'} | cut -d '/' -f3 | cut -d ':' -f1)
+unidad = ""
+contador = 0
+while [[ ! "$unidad" =~ "loop0"]]
+do
+  contador ++
+  unidad=$(fdisk -l | grep /dev/ | awk {'print $2'} | cut -d '/' -f3 | cut -d ':' -f1)
+  echo "$unidad""$contador"
+done
 
 exit
 
