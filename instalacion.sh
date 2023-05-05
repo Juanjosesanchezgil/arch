@@ -6,6 +6,7 @@ echo Instalador automatico personalizado
 echo -------------------------------------
 
 fdisk -l
+echo "¿En que unidad deseas intalar?: "
 contador = 0
 while [[ true ]]
 do
@@ -17,6 +18,7 @@ do
   fi
   echo "$contador" "$unidad"
 done
+echo $contador
 
 exit
 
