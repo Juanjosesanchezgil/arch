@@ -11,7 +11,7 @@ contador = 0
 while [[ ! "$unidad" =~ "loop0"]]
 do
   contador ++
-  unidad=$(fdisk -l | grep /dev/ | awk 'NR==1{print $0}' | awk {'print $2'} | cut -d '/' -f3 | cut -d ':' -f1)
+  unidad=$(fdisk -l | grep /dev/ | awk 'NR=='$contador'{print $0}' | awk {'print $2'} | cut -d '/' -f3 | cut -d ':' -f1)
   echo "$unidad""$contador"
 done
 
