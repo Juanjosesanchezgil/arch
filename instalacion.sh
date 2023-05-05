@@ -1,16 +1,15 @@
 #!/bin/bash
 # -*- ENCODING: UTF-8 -*-
-
-echo -------------------------------------
-echo Instalador automatico personalizado
-echo -------------------------------------
-echo
-
+echo "
+-------------------------------------
+ Instalador automatico personalizado
+-------------------------------------
+"
 fdisk -l
-echo
-echo "¿En que unidad deseas intalar?: "
-echo -------------------------------------
-echo
+echo "
+ ¿En que unidad deseas intalar?: 
+-------------------------------------
+"
 contador=0
 while [[ true ]]
 do
@@ -22,38 +21,16 @@ do
   fi
   echo "$contador" "$unidad"
 done
-echo
+echo 
 read -p "Introduce el numero: " contador
 echo
 
 unidad=$(fdisk -l | grep /dev/ | awk 'NR=='$contador'{print $0}' | awk {'print $2'} | cut -d '/' -f3 | cut -d ':' -f1)
 echo "$unidad"
-exit
-
-echo -------------------------------------
-echo Unidad para instalar
-echo -------------------------------------
-
-read -p "¿Vas a instalar en M.2? s/n " ssd
-while [[ ! "$ssd" =~ ^(S|s|N|n)$ ]]
-do
-  read -p "¿Vas a instalar en M.2? s/n " ssd
-done
-
-if [[ $ssd =~ ^(S|s)$ ]]
-then
-  fdisk -l
-  unidad=$(fdisk -l | grep Disco | awk {'print $2'} | cut -d '/' -f3 | cut -d ':' -f1)
-  #unidad=nvme
- else
-  fdisk -l
-  unidad=$(fdisk -l | grep Disco | awk {'print $2'} | cut -d '/' -f3 | cut -d ':' -f1)
-  #unidad=sd
-fi
-
-exit
 
 cfdisk /dev/"$unidad"
+
+exit
 
 echo -------------------------
 echo Sistema de particiones
