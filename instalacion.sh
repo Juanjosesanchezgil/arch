@@ -11,7 +11,7 @@ do
   read -p "¿Vas a instalar en M.2? s/n " ssd
 done
 
-if [[ $ssd = ^(S|s)$ ]]
+if [[ $ssd =~ ^(S|s)$ ]]
 then
   unidad=nvme
   fdisk -l | grep nvme
@@ -28,7 +28,7 @@ echo -------------------------
 
 read -p "¿Es una instalacion multiboot? s/n" arranque
 
-if [[ $arranque =~ ^(S|s|N|n)$ ]]
+if [[ $arranque =~ ^(S|s)$ ]]
 then
   mkswap /dev/"$unidad"1
   mkfs.ext4 /dev/"$unidad"2
