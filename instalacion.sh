@@ -1,9 +1,18 @@
 #!/bin/bash
 # -*- ENCODING: UTF-8 -*-
 
-echo -------------------------
+echo -------------------------------------
+echo Instalador automatico personalizado
+echo -------------------------------------
+
+fdisk -l
+unidad=$(fdisk -l | grep Disco | awk {'print $2'} | cut -d '/' -f3 | cut -d ':' -f1)
+
+exit
+
+echo -------------------------------------
 echo Unidad para instalar
-echo -------------------------
+echo -------------------------------------
 
 read -p "¿Vas a instalar en M.2? s/n " ssd
 while [[ ! "$ssd" =~ ^(S|s|N|n)$ ]]
@@ -13,13 +22,16 @@ done
 
 if [[ $ssd =~ ^(S|s)$ ]]
 then
-  fdisk -l | grep Disco |grep nvme
-  
-  unidad=nvme
+  fdisk -l
+  unidad=$(fdisk -l | grep Disco | awk {'print $2'} | cut -d '/' -f3 | cut -d ':' -f1)
+  #unidad=nvme
  else
-  fdisk -l | grep Disco | grep sd
-  unidad=sd
+  fdisk -l
+  unidad=$(fdisk -l | grep Disco | awk {'print $2'} | cut -d '/' -f3 | cut -d ':' -f1)
+  #unidad=sd
 fi
+
+exit
 
 cfdisk /dev/"$unidad"
 
