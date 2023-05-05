@@ -26,7 +26,6 @@ read -p "Introduce el numero: " contador
 echo
 
 unidad=$(fdisk -l | grep /dev/ | awk 'NR=='$contador'{print $0}' | awk {'print $2'} | cut -d '/' -f3 | cut -d ':' -f1)
-echo "$unidad"
 
 # Automatizar particionado
 cfdisk /dev/"$unidad"
@@ -58,7 +57,8 @@ then
   echo -------------------------
   
   fdisk -l
-  read -p "Escribe el nombre de la particion donde se encuentra el arranque de Windows " particion
+  unidad=$(fdisk -l | grep "EFI System" | awk 'NR=='1'{print $0}' | awk {'print $2'} | cut -d '/' -f3 | cut -d ':' -f1)
+  #read -p "Escribe el nombre de la particion donde se encuentra el arranque de Windows " particion
   mount --mkdir /dev/"$particion" /mnt/boot
 else
 
