@@ -70,7 +70,7 @@ then
   fdisk -l
   unidad=$(fdisk -l | grep "EFI System" | awk 'NR=='1'{print $0}' | awk {'print $2'} | cut -d '/' -f3 | cut -d ':' -f1)
   #read -p "Escribe el nombre de la particion donde se encuentra el arranque de Windows " particion
-  mount --mkdir /dev/"$particion" /mnt/boot
+  mount --mkdir /dev/"$unidad" /mnt/boot
 else
 
   mkswap /dev/"$unidad"2
