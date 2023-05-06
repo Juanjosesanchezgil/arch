@@ -46,18 +46,22 @@ echo -------------------------
 
 
 if [[ $arranque =~ ^(S|s)$ ]]
+  if [[ $unidad =~ nvme* ]]
+  then 
+    $unidad="${unidad}p"
+  fi  
 then
-  mkswap /dev/"$unidad"p1
-  mkfs.ext4 /dev/"$unidad"p2
-  mkfs.ext4 /dev/"$unidad"p3
+  mkswap /dev/"$unidad"1
+  mkfs.ext4 /dev/"$unidad"2
+  mkfs.ext4 /dev/"$unidad"3
   
   echo -------------------------
   echo Montando particiones
   echo -------------------------
   
-  swapon /dev/"$unidad"p1
-  mount /dev/"$unidad"p2 /mnt
-  mount --mkdir /dev/"$unidad"p3 /mnt/home
+  swapon /dev/"$unidad"1
+  mount /dev/"$unidad"2 /mnt
+  mount --mkdir /dev/"$unidad"3 /mnt/home
   
   echo -------------------------
   echo Opciones particion Boot
@@ -69,24 +73,24 @@ then
   mount --mkdir /dev/"$particion" /mnt/boot
 else
 
-  mkswap /dev/"$unidad"p2
-  mkfs.ext4 /dev/"$unidad"p3
-  mkfs.ext4 /dev/"$unidad"p4
+  mkswap /dev/"$unidad"2
+  mkfs.ext4 /dev/"$unidad"3
+  mkfs.ext4 /dev/"$unidad"4
   
   echo -------------------------
   echo Montando particiones
   echo -------------------------
   
-  swapon /dev/"$unidad"p2
-  mount /dev/"$unidad"p3 /mnt
-  mount --mkdir /dev/"$unidad"p4 /mnt/home
+  swapon /dev/"$unidad"2
+  mount /dev/"$unidad"3 /mnt
+  mount --mkdir /dev/"$unidad"4 /mnt/home
   
   echo -------------------------
   echo Opciones particion Boot
   echo -------------------------
   
-  mkfs.fat -F 32 /dev/"$unidad"p1
-  mount --mkdir /dev/"$unidad"p1 /mnt/boot
+  mkfs.fat -F 32 /dev/"$unidad"1
+  mount --mkdir /dev/"$unidad"1 /mnt/boot
 fi
 
 exit
