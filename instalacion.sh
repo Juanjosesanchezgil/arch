@@ -33,6 +33,8 @@ unidad=$(fdisk -l | grep "Disk /dev/" | awk 'NR=='$contador'{print $0}' | awk {'
 # Automatizar particionado
 cfdisk /dev/"$unidad"
 
+fdisk -l | grep $unidad
+
 exit
 
 echo -------------------------
