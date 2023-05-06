@@ -44,12 +44,12 @@ echo "-------------------------
 Sistema de particiones
 -------------------------
 "
+if [[ $unidad =~ nvme* ]]
+then 
+  $unidad="${unidad}p"
+fi  
 
 if [[ $arranque =~ ^(S|s)$ ]]
-  if [[ $unidad =~ nvme* ]]
-  then 
-    $unidad="${unidad}p"
-  fi  
 then
   mkswap /dev/"$unidad"1
   mkfs.ext4 /dev/"$unidad"2
