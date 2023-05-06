@@ -36,7 +36,7 @@ cfdisk /dev/"$unidad"
 fdisk -l | grep $unidad
 
 echo 
-read -p "¿Es una instalacion multiboot? s/n" arranque
+read -p "¿Es una instalacion multiboot? s/n: " arranque
 echo "----------------------------------------------
 "
 
@@ -92,8 +92,6 @@ else
   mkfs.fat -F 32 /dev/"$unidad"1
   mount --mkdir /dev/"$unidad"1 /mnt/boot
 fi
-
-exit
 
 echo -------------------------
 echo Instalando paquetes
