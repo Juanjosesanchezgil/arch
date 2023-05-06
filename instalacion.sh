@@ -35,15 +35,15 @@ cfdisk /dev/"$unidad"
 
 fdisk -l | grep $unidad
 
-echo "
+echo 
 read -p "¿Es una instalacion multiboot? s/n" arranque
-----------------------------------------------
+echo "----------------------------------------------
 "
 
-echo -------------------------
-echo Sistema de particiones
-echo -------------------------
-
+echo "-------------------------
+Sistema de particiones
+-------------------------
+"
 
 if [[ $arranque =~ ^(S|s)$ ]]
   if [[ $unidad =~ nvme* ]]
