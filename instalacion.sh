@@ -46,7 +46,7 @@ Sistema de particiones
 "
 if [[ $unidad =~ nvme* ]]
 then 
-  $unidad="${unidad}p"
+  unidad="${unidad}p"
 fi  
 
 if [[ $arranque =~ ^(S|s)$ ]]
@@ -68,8 +68,7 @@ then
   echo -------------------------
   
   fdisk -l
-  unidad=$(fdisk -l | grep "EFI System" | awk 'NR=='1'{print $0}' | awk {'print $2'} | cut -d '/' -f3 | cut -d ':' -f1)
-  #read -p "Escribe el nombre de la particion donde se encuentra el arranque de Windows " particion
+  unidad=$(fdisk -l | grep "EFI System" | awk 'NR=='1'{print $0}' | awk {'print $1'} | cut -d '/' -f3 | cut -d ':' -f1)
   mount --mkdir /dev/"$unidad" /mnt/boot
 else
 
