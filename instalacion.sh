@@ -96,7 +96,7 @@ echo -------------------------
 echo Instalando paquetes
 echo -------------------------
 
-pacstrap -K /mnt base base-devel linux linux-firmware nano intel-ucode
+pacstrap -K /mnt base base-devel linux linux-firmware nano
 
 echo -------------------------
 echo Instalando el sistema
