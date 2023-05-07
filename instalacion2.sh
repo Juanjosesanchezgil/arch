@@ -3,7 +3,7 @@
 
 pacman -Sy
 
-pacman -S xorg i3-wm pulseaudio networkmanager grub docker docker-compose efibootmgr alacritty dbeaver htop ranger pcmanfm neofetch git i3status intellij-idea-community-edition lightdm lightdm-gtk-greeter network-manager-applet nitrogen nm-connection-editor papirus-icon-theme picom rofi seahorse vlc unzip ntfs-3g udiskie libreoffice-fresh os-prober unzip arandr noto-fonts ttf-dejavu volumeicon ttf-liberation pavucontrol github-cli i3lock xautolock xarchiver --noconfirm
+pacman -S virtualbox-host-modules-arch virtualbox xorg i3-wm pulseaudio networkmanager grub docker docker-compose efibootmgr alacritty dbeaver htop ranger pcmanfm neofetch git i3status intellij-idea-community-edition lightdm lightdm-gtk-greeter network-manager-applet nitrogen nm-connection-editor papirus-icon-theme picom rofi seahorse vlc unzip ntfs-3g udiskie libreoffice-fresh os-prober unzip arandr noto-fonts ttf-dejavu volumeicon ttf-liberation pavucontrol github-cli i3lock xautolock xarchiver --noconfirm
 
 echo -------------------------
 echo Opciones de localizacion
