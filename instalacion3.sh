@@ -9,4 +9,5 @@ yay -S google-chrome visual-studio-code-bin --noconfirm
 
 chsh /bin/zsh
 
-#read -rsp $'Press enter to continue...\n'
+modprobe vboxdrv
+
