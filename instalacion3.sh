@@ -7,4 +7,9 @@ echo -------------------------
 
 yay -S google-chrome visual-studio-code-bin --noconfirm
 
-#read -rsp $'Press enter to continue...\n'
+chsh /bin/zsh
+
+modprobe vboxdrv
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
