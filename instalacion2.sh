@@ -84,6 +84,7 @@ echo -------------------------
 echo "setxkbmap es &
 nm-applet &
 udiskie -t &
+picom &
 volumeicon &" >> /home/"$usuario"/.xprofile
 
 cd /home/$usuario/
