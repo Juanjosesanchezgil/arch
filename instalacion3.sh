@@ -15,5 +15,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
-sed -i 's/plugins=(git)/plugins=(\n \git\n \zsh-autosuggestions\n \)/g' .zshrc
+git clone git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+sed -i 's/plugins=(git)/plugins=(\n \git\n \zsh-autosuggestions\n \zsh-syntax-highlighting\n \)/g' .zshrc
 
