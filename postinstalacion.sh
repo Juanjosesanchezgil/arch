@@ -1,6 +1,6 @@
 #!/bin/bash
 # -*- ENCODING: UTF-8 -*-
-
+alacritty
 sudo pacman -Syu
 sudo pacman -S arandr dbeaver github-cli htop i3lock i3status libreoffice-fresh neofetch network-manager-applet nitrogen nm-connection-editor ntfs-3g papirus-icon-theme pavucontrol pcmanfm picom ranger rofi seahorse udiskie unzip vlc virtualbox virtualbox-host-modules-arch volumeicon xarchiver xautolock zsh --noconfirm
 
