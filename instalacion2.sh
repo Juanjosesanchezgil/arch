@@ -3,7 +3,7 @@
 
 pacman -Sy
 
-pacman -S alacritty arandr dbeaver docker docker-compose efibootmgr git github-cli grub htop i3-wm i3lock i3status libreoffice-fresh lightdm lightdm-gtk-greeter neofetch networkmanager network-manager-applet nitrogen nm-connection-editor noto-fonts ntfs-3g os-prober papirus-icon-theme pavucontrol pcmanfm picom pulseaudio ranger rofi seahorse ttf-dejavu ttf-liberation udiskie unzip vlc virtualbox virtualbox-host-modules-arch volumeicon xarchiver xautolock xorg zsh --noconfirm
+pacman -S alacritty docker docker-compose efibootmgr git grub i3-wm lightdm lightdm-gtk-greeter networkmanager os-prober pulseaudio xorg --noconfirm
 
 
 echo -------------------------
