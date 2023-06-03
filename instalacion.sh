@@ -105,9 +105,9 @@ echo -------------------------
 genfstab -U /mnt >> /mnt/etc/fstab
 
 cp instalacion2.sh /mnt
-cp instalacion3.sh /mnt
-cp -rf .config /mnt
-cp yay-11.3.2-1-x86_64.pkg.tar.zst /mnt
+#cp instalacion3.sh /mnt
+#cp -rf .config /mnt
+#cp yay-11.3.2-1-x86_64.pkg.tar.zst /mnt
 
 arch-chroot /mnt ./instalacion2.sh
 

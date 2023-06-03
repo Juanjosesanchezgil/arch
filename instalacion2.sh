@@ -3,7 +3,8 @@
 
 pacman -Sy
 
-pacman -S alacritty arandr dbeaver docker docker-compose efibootmgr git github-cli grub htop i3-wm i3lock i3status intellij-idea-community-edition libreoffice-fresh lightdm lightdm-gtk-greeter neofetch networkmanager network-manager-applet nitrogen nm-connection-editor noto-fonts ntfs-3g os-prober papirus-icon-theme pavucontrol pcmanfm picom pulseaudio ranger rofi seahorse ttf-dejavu ttf-liberation udiskie unzip vlc virtualbox virtualbox-host-modules-arch volumeicon xarchiver xautolock xorg zsh --noconfirm
+pacman -S alacritty arandr dbeaver docker docker-compose efibootmgr git github-cli grub htop i3-wm i3lock i3status libreoffice-fresh lightdm lightdm-gtk-greeter neofetch networkmanager network-manager-applet nitrogen nm-connection-editor noto-fonts ntfs-3g os-prober papirus-icon-theme pavucontrol pcmanfm picom pulseaudio ranger rofi seahorse ttf-dejavu ttf-liberation udiskie unzip vlc virtualbox virtualbox-host-modules-arch volumeicon xarchiver xautolock xorg zsh --noconfirm
+
 
 echo -------------------------
 echo Opciones de localizacion
@@ -78,35 +79,37 @@ os-prober
 grub-mkconfig -o /boot/grub/grub.cfg
 
 echo -------------------------
-echo Opciones de configuracion
+echo Creacion de .Xprofile
 echo -------------------------
 
 echo "setxkbmap es &
 nm-applet &
 udiskie -t &
-picom &
-volumeicon &" >> /home/"$usuario"/.xprofile
+volumeicon &
+git clone https://github.com/juanjosesanchezgil/arch.git
+chmod a+x arch/postinstalacion.sh" >> /home/"$usuario"/.xprofile
 
-cd /home/$usuario/
 
-git clone https://github.com/jluttine/rofi-power-menu.git .rofi-power-menu
+#cd /home/$usuario/
 
-cd /
+#git clone https://github.com/jluttine/rofi-power-menu.git .rofi-power-menu
 
-pacman -U yay-11.3.2-1-x86_64.pkg.tar.zst --noconfirm
+#cd /
 
-cp -rf .config /home/"$usuario"/
+#pacman -U yay-11.3.2-1-x86_64.pkg.tar.zst --noconfirm
+
+#cp -rf .config /home/"$usuario"/
 
 chown -R $usuario /home/$usuario/
 chgrp -R $usuario /home/$usuario/
 
 #read -rsp $'Press enter to continue...\n'
 
-su $usuario ./instalacion3.sh
+#su $usuario ./instalacion3.sh
 
-rm -rf instalacion*.sh
-rm -rf .config
-rm -rf yay-11.3.2-1-x86_64.pkg.tar.zst
+#rm -rf instalacion*.sh
+#rm -rf .config
+#rm -rf yay-11.3.2-1-x86_64.pkg.tar.zst
 
 
 
