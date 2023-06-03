@@ -56,7 +56,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec rofi -show drun -icon-theme "Papyrus" -show-icons
 
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec rofi -show p -modi p:$HOME/.rofi-power-menu/rofi-power-menu
+bindsym $mod+Shift+e exec rofi -show p -modi p:$HOME/.config/.rofi-power-menu/rofi-power-menu
 
 # change focus
 bindsym $mod+Left focus left
