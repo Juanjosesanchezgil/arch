@@ -5,6 +5,7 @@ pacman -Sy
 
 pacman -S alacritty arandr dbeaver docker docker-compose efibootmgr git github-cli grub htop i3-wm i3lock i3status libreoffice-fresh lightdm lightdm-gtk-greeter neofetch networkmanager network-manager-applet nitrogen nm-connection-editor noto-fonts ntfs-3g os-prober papirus-icon-theme pavucontrol pcmanfm picom pulseaudio ranger rofi seahorse ttf-dejavu ttf-liberation udiskie unzip vlc virtualbox virtualbox-host-modules-arch volumeicon xarchiver xautolock xorg zsh --noconfirm
 
+
 echo -------------------------
 echo Opciones de localizacion
 echo -------------------------
@@ -87,6 +88,7 @@ udiskie -t &
 volumeicon &
 git clone https://github.com/juanjosesanchezgil/arch.git
 chmod a+x arch/postinstalacion.sh" >> /home/"$usuario"/.xprofile
+
 
 #cd /home/$usuario/
 
