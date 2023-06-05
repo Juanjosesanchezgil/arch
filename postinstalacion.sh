@@ -1,6 +1,6 @@
 #!/bin/bash
 # -*- ENCODING: UTF-8 -*-
-sudo pacman -Syu
+sudo pacman -Syu --noconfirm
 sudo pacman -S arandr dbeaver github-cli htop i3lock i3status libreoffice-fresh neofetch network-manager-applet nitrogen nm-connection-editor ntfs-3g papirus-icon-theme pavucontrol pcmanfm picom ranger rofi seahorse udiskie unzip vlc virtualbox virtualbox-host-modules-arch volumeicon xarchiver xautolock zsh --noconfirm
 
 
@@ -10,7 +10,7 @@ echo -------------------------
 
 cd ~
 cp -rf arch/.config .config 
-git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
+git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si --noconfirm
 
 cd ~
 
@@ -30,6 +30,13 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 git clone git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 sed -i 's/plugins=(git)/plugins=(\n \git\n \zsh-autosuggestions\n \zsh-syntax-highlighting\n \)/g' .zshrc
+
+rm -rf ~/.xprofile
+
+echo "setxkbmap es &
+nm-applet &
+udiskie -t &
+volumeicon &" >> ~/.xprofile
 
 reboot
 
