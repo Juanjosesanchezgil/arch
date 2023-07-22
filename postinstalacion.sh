@@ -9,7 +9,7 @@ echo YAY y AUR
 echo -------------------------
 
 cd ~
-cp -rf arch/.config/i3/* .config/i3/
+cp -rf ~/arch/.config/i3/* ~/.config/i3/
 git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si --noconfirm
 
 cd ~
