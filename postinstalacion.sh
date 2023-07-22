@@ -36,6 +36,8 @@ nm-applet &
 udiskie -t &
 volumeicon &" >> ~/.xprofile
 
+mkdir -p ~/.config/i3/
+
 cp -rf ~/arch/.config/i3/config ~/.config/i3/config
 
 modprobe vboxdrv
