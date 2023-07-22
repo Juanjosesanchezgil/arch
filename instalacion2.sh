@@ -86,32 +86,16 @@ echo "setxkbmap es &
 nm-applet &
 udiskie -t &
 volumeicon &
-nmtui
+nmtui &
 git clone https://github.com/juanjosesanchezgil/arch.git
 chmod a+x arch/postinstalacion.sh
 alacritty -e ./arch/postinstalacion.sh" >> /home/"$usuario"/.xprofile
 
 
-#cd /home/$usuario/
-
-#git clone https://github.com/jluttine/rofi-power-menu.git .rofi-power-menu
-
-#cd /
-
-#pacman -U yay-11.3.2-1-x86_64.pkg.tar.zst --noconfirm
-
-#cp -rf .config /home/"$usuario"/
-
 chown -R $usuario /home/$usuario/
 chgrp -R $usuario /home/$usuario/
 
-#read -rsp $'Press enter to continue...\n'
 
-#su $usuario ./instalacion3.sh
-
-#rm -rf instalacion*.sh
-#rm -rf .config
-#rm -rf yay-11.3.2-1-x86_64.pkg.tar.zst
 
 
 
