@@ -21,8 +21,6 @@ yay -S google-chrome visual-studio-code-bin --noconfirm
 
 chsh /bin/zsh
 
-modprobe vboxdrv
-
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
@@ -39,6 +37,8 @@ udiskie -t &
 volumeicon &" >> ~/.xprofile
 
 cp -rf ~/arch/.config/i3/config ~/.config/i3/config
+
+modprobe vboxdrv
 
 reboot
 
