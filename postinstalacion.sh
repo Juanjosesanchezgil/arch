@@ -8,8 +8,6 @@ echo -------------------------
 echo YAY y AUR
 echo -------------------------
 
-cd ~
-cp -rf ~/arch/.config/i3/config ~/.config/i3/config
 git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si --noconfirm
 
 cd ~
@@ -37,6 +35,8 @@ echo "setxkbmap es &
 nm-applet &
 udiskie -t &
 volumeicon &" >> ~/.xprofile
+
+cp -rf ~/arch/.config/i3/config ~/.config/i3/config
 
 reboot
 
