@@ -1,7 +1,7 @@
 #!/bin/bash
 # -*- ENCODING: UTF-8 -*-
 sudo pacman -Syu --noconfirm
-sudo pacman -S arandr dbeaver github-cli htop i3lock i3status libreoffice-fresh neofetch network-manager-applet nitrogen nm-connection-editor ntfs-3g papirus-icon-theme pavucontrol pcmanfm picom ranger rofi seahorse udiskie unzip vlc virtualbox virtualbox-host-modules-arch volumeicon xarchiver xautolock zsh --noconfirm
+sudo pacman -S arandr dbeaver github-cli htop i3lock i3status libreoffice-fresh neofetch network-manager-applet nitrogen nm-connection-editor ntfs-3g papirus-icon-theme pavucontrol pcmanfm picom ranger rofi seahorse ttf-firacode-nerd udiskie unzip vlc virtualbox virtualbox-host-modules-arch volumeicon xarchiver xautolock zsh --noconfirm
 
 
 echo -------------------------
