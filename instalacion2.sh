@@ -74,10 +74,6 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 sed -i 's/#GRUB_DISABLE_OS_PROBER=false/GRUB_DISABLE_OS_PROBER=false/g' /etc/default/grub
 
-os-prober
-
-grub-mkconfig -o /boot/grub/grub.cfg
-
 echo -------------------------
 echo Creacion de .Xprofile
 echo -------------------------
