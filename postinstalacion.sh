@@ -40,6 +40,10 @@ mkdir -p ~/.config/i3/
 
 cp -rf ~/arch/.config/i3/config ~/.config/i3/config
 
+os-prober
+
+grub-mkconfig -o /boot/grub/grub.cfg
+
 modprobe vboxdrv
 
 reboot
