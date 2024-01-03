@@ -82,7 +82,7 @@ echo "setxkbmap es &
 nm-applet &
 udiskie -t &
 volumeicon &
-git clone https://github.com/juanjosesanchezgil/arch.git
+alacritty -e git clone https://github.com/juanjosesanchezgil/arch.git
 chmod a+x arch/postinstalacion.sh
 alacritty -e ./arch/postinstalacion.sh" >> /home/"$usuario"/.xprofile
 
